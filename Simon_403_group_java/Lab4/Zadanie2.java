@@ -12,6 +12,9 @@ public class Zadanie2 {
            float result = 0;
            Scanner sc = new Scanner(System.in);
            n = sc.nextInt();
+              if (n < 0) {
+              System.out.print("Error n is negative");
+              }
            for (int i = 1; i<=n; i++){
                if((i%2)==0){
                    result -=1/i;    
