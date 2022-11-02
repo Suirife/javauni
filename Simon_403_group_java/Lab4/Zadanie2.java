@@ -18,10 +18,10 @@ public class Zadanie2 {
               }
            for (int i = 1; i<=n; i++){
                if((i%2)==0){
-                   result -=1/i;    
+                   result -=Math.pow(i,-1);    
                }
                else {
-                   result += 1/i;
+                   result +=Math.pow(i,-1);
                }
            }
            System.out.print(result);
