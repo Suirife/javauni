@@ -14,6 +14,7 @@ public class Zadanie2 {
            n = sc.nextInt();
               if (n < 0) {
               System.out.print("Error n is negative");
+                     break;
               }
            for (int i = 1; i<=n; i++){
                if((i%2)==0){
