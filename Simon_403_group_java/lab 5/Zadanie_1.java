@@ -1,6 +1,6 @@
 /*Simon 16.11*/
 import java.util.Scanner;
-public class lab5
+public class Zadanie_1
 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
