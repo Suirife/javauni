@@ -1,22 +1,34 @@
-
+/*SSS*/
 import java.util.Scanner;
-
-public class zadanie3 {
-    public static void main(String[] args) {
-        final int MONTHS_PER_YEAR = 12;
-        double annualInterestRate, monthlyInterestRate, loanAmount, monthlyPayment, totalPayment;
-        int numberOfYears;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Введите ежегодную ставку по кредиту в %, например, 8,25: ");
-        annualInterestRate = input.nextDouble();
-        System.out.print("Введите срок кредита в годах, например, 5: ");
-        numberOfYears = input.nextInt();
-        System.out.print("Введите сумму кредита в рублях, например, 120000,95: ");
-        loanAmount = input.nextDouble();
-        monthlyInterestRate = annualInterestRate / 12 / 100;
-        monthlyPayment = loanAmount * monthlyInterestRate / (1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * MONTHS_PER_YEAR));
-        totalPayment = monthlyPayment * numberOfYears * MONTHS_PER_YEAR;
-        System.out.println("Ежемесячный платеж равен " + (int)(monthlyPayment * 100) / 100.0 + " руб.");
-        System.out.println("Стоимость кредита равна " + (int)(totalPayment * 100) / 100.0 + " руб.");
-    }
+public class Main
+{
+	public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+    	double month_pay, amount, month_int_rate, annual_int_rate = 0, total_pay;
+    	System.out.println("1 - Mortgage");
+    	System.out.println("2 - Car");
+    	System.out.println("3 - Educational");
+    	System.out.print("Enter loan type: ");
+    	int type = input.nextInt();
+    	switch (type) {
+    	    case 1:
+    	        annual_int_rate = 15;
+    	        break;
+            case 2:
+                annual_int_rate = 10;
+    	        break;
+            case 3:
+                annual_int_rate = 5;
+    	        break;
+    	}
+    	System.out.print("Enter loan term(years): ");
+    	int years = input.nextInt();
+    	System.out.print("Enter the loan amount: ");
+    	amount = input.nextDouble();
+    	month_int_rate = annual_int_rate/12/100;
+    	month_pay = amount * month_int_rate / (1 - 1 / Math.pow(1 + month_int_rate, years * 12));
+    	total_pay = month_pay * years * 12;
+    	System.out.println("Monthly payment: " + (int)(month_pay*100)/100.0 + " Rub");
+    	System.out.println("Total payment: " + (int)(total_pay*100)/100.0 + " Rub");
+	}
 }
